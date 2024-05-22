@@ -1,0 +1,14 @@
+<h1>Resultados de la Búsqueda</h1>
+<input type="text" [(ngModel)]="searchQuery" placeholder="Buscar de nuevo...">
+<button (click)="search()">Buscar</button>
+
+<div *ngIf="message">{{ message }}</div>
+<ul>
+  <li *ngFor="let animal of animals" (click)="showDetails(animal)">
+    {{ animal.name }}
+  </li>
+</ul>
+<div *ngIf="selectedAnimal">
+  <h2>{{ selectedAnimal.name }}</h2>
+  <p>{{ selectedAnimal.description }}</p>
+</div>
